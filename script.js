@@ -1,14 +1,8 @@
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialCharacters = [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")];
-var lowercase = ["abcdefghijklmnopqrstuvwxyz".split("")];
-var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")];
+//prompt the user for their password lenght and store into a variable
+//validate the password length and make sure it is = to 8 and 128 (if statement)
+//prompt the user if they want special characters and store into a variable
 
-function generatePassword() {
-  //prompt the user for their password lenght and store into a variable
-  //validate the password length and make sure it is = to 8 and 128 (if statement)
-  //prompt the user if they want special characters and store into a variable
 
-};
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -24,3 +18,19 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//Start of Code
+//character sets
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@","[","^", "_", "`", "{", "|", "}", "~"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+function generatePassword() {
+  var passwordLength; 
+
+  if(passwordLength >= 8 && passwordLength <=128){
+    
+    return;
+  }
+};
