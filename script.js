@@ -27,10 +27,39 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 function generatePassword() {
-  var passwordLength; 
+  var passwordLength = [];
+  var useNumbers;
+  var useSymbols;
+  var useLower; 
+  var useUpper;
+  var generatedPassword = "";
+  
+  passwordLength = window.prompt ("How long would you like your password to be?");
 
-  if(passwordLength >= 8 && passwordLength <=128){
-    
-    return;
-  }
-};
+     if(passwordLength >= 8 && passwordLength <=128) {
+
+  useSymbols = window.confirm ("Would you like to use any special characters?");
+
+  useLower = window.confirm("Would you like to use any lower case letters?");
+
+  useUpper = window.confirm("Would you like to use any upper case letters?");
+
+  };
+
+   if(useNumbers || useSymbols || useLower || useUpper) {
+
+      if (useNumbers) {
+      passwordLength = passwordLength.concat(numbers);
+      }
+      if (useSymbols){
+        passwordLength = passwordLength.concat(specialCharacters);
+      }
+      if (useLower) {
+        passwordLength = passwordLength.concat(lowercase);
+      }
+      if (useUpper) {
+        passwordLength = passwordLength.concat(uppercase);
+      }
+      return generatedPassword;
+   };
+}
