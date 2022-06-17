@@ -27,7 +27,7 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 function generatePassword() {
-  var passwordLength = [];
+  var passwordLength = [128];
   var useNumbers;
   var useSymbols;
   var useLower; 
@@ -44,22 +44,27 @@ function generatePassword() {
 
   useUpper = window.confirm("Would you like to use any upper case letters?");
 
-  };
+  }
 
-   if(useNumbers || useSymbols || useLower || useUpper) {
+  for (var i = 0; i <= passwordLength; i++) {
+    var useNumbers = Math.floor(Math.random() * numbers.length);
+    password += numbers.concat(useNumbers +1);
+   }
 
-      if (useNumbers) {
-      passwordLength = passwordLength.concat(numbers);
-      }
-      if (useSymbols){
-        passwordLength = passwordLength.concat(specialCharacters);
-      }
-      if (useLower) {
-        passwordLength = passwordLength.concat(lowercase);
-      }
-      if (useUpper) {
-        passwordLength = passwordLength.concat(uppercase);
-      }
+   for (var i = 0; i <= passwordLength; i++) {
+    var useSymbols = Math.floor(Math.random() * specialCharacters.length);
+    password += specialCharacters.concat(useSymbols, useSymbols +1);
+   }
+
+   for (var i = 0; i <= passwordLength; i++) {
+    var useLower = Math.floor(Math.random() * lowercase.length);
+    password += lowercase.concat(useLower, useLower +1);
+   }
+
+   for (var i = 0; i <= passwordLength; i++) {
+    var useUpper = Math.floor(Math.random() * uppercase.length);
+    password += uppercase.concat(useUpper, useUpper +1);
+   }
       return generatedPassword;
-   };
-}
+   }
+   
